@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from "../components/ProductCard";
+import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const SponsoredProducts = () => {
   const [sponsoredProducts, setSponsoredProducts] = useState([]);
@@ -16,12 +19,12 @@ const SponsoredProducts = () => {
       // Debug: Check if environment variable is set
       console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
       
-      const apiUrl = `https://iskashop-backend.vercel.app/api/v2/product/get-all-products`;
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/product/iskapromo`;
       console.log('Full API URL:', apiUrl);
       
       const response = await axios.get(apiUrl);
-      console.log('API Response:', response);
-      console.log('Products data:', response.data);
+      // console.log('API Response:', response);
+      // console.log('Products data:', response.data);
       
       setSponsoredProducts(response.data.products || []);
     } catch (error) {
@@ -76,19 +79,39 @@ const SponsoredProducts = () => {
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">All Products</h2>
           <p className="mt-4 text-lg text-gray-600">Browse all available products from our sellers</p>
         </div>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={1}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+        >
           {sponsoredProducts && sponsoredProducts.length > 0 ? (
             sponsoredProducts.map((product, index) => (
-              <div key={product._id || index} className="transform transition duration-300 hover:scale-105">
-                <ProductCard data={product} isSponsored={false} />
-              </div>
+              <SwiperSlide key={product._id || index}>
+                <div className="transform transition duration-300 hover:scale-105">
+                  <ProductCard data={product} isSponsored={false} />
+                </div>
+              </SwiperSlide>
             ))
           ) : (
             <div className="col-span-full text-center py-8">
               <p className="text-gray-500">No products available</p>
             </div>
           )}
-        </div>
+        </Swiper>
       </div>
     </div>
   );

@@ -11,25 +11,23 @@ const ProductCard = ({ data, isSponsored }) => {
   const displayPrice = data.grossAmount || data.discountPrice || 0;
 
   return (
-    <div className="w-full h-full bg-white text-primary rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
-      <div className="relative h-[250px] overflow-hidden">
+    <div className="w-full h-full bg-white text-primary rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+      <div className="relative h-[250px] overflow-hidden rounded-t-xl">
         <img
           src={`${data.images && data.images[0]?.url}`}
           alt={data.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        {/* Sponsored label */}
         {isSponsored && (
           <div className="absolute bottom-3 left-3">
-            <span className="bg-text_color text-white px-2 py-1 rounded-md text-xs font-semibold shadow-md">
+            <span className="bg-primary text-white px-2 py-1 rounded-md text-xs font-semibold shadow-md">
               Sponsored
             </span>
           </div>
         )}
-        {/* Discount badge */}
         {data.discountPercentage > 0 && (
           <div className="absolute top-3 left-3">
-            <span className="bg-white text-primary_color px-2 py-1 rounded-md text-sm">
+            <span className="bg-red-500 text-white px-2 py-1 rounded-md text-sm">
               {Math.round(data.discountPercentage)}% off
             </span>
           </div>

@@ -7,44 +7,44 @@ const ShopFaq = () => {
 
   const faqs = [
     {
-      question: "What is IskaShop and how does it work?",
-      answer: "IskaShop is Ghana's premier e-commerce platform designed specifically for local businesses and customers. You can browse products from verified sellers, place orders securely, and enjoy fast delivery across Ghana. Simply create an account, browse categories, add items to cart, and checkout with multiple payment options."
+      question: "What is ISKA shop and how does it work ?",
+      answer: "ISKA Shop is Ghana’s trusted e-commerce hub — with verified sellers, secure checkout, and fast delivery to your door."
     },
     {
-      question: "How do I create an account on IskaShop?",
-      answer: "Creating an account is simple! Click the 'Sign Up' button, provide your email address, phone number, and create a password. You'll receive a verification code via SMS or email. Once verified, you can start shopping immediately. You can also sign up using your Google or Facebook account for faster registration."
+      question: "How do I create an account on ISKA SHOP ?",
+      answer: "Just click Sign Up, enter your email, phone number, and password, then verify with the code we send. You can also sign up instantly with Google or Facebook."
     },
     {
-      question: "What payment methods are accepted?",
-      answer: "IskaShop accepts multiple payment methods including Mobile Money (MTN, Vodafone, AirtelTigo), bank transfers, debit/credit cards, and cash on delivery. All online payments are processed securely with bank-level encryption to protect your financial information."
+      question: "What payment methods are accepted ?",
+      answer: "You can pay with Mobile Money (MTN, Vodafone, AirtelTigo), credit/debit cards, — all secured with bank-level encryption."
     },
     {
-      question: "How long does delivery take?",
-      answer: "Delivery times vary by location. In major cities like Accra, Kumasi, and Takoradi, you can expect delivery within 1-3 business days. For other locations, delivery typically takes 3-7 business days. We also offer same-day delivery for urgent orders in select areas. You'll receive real-time tracking updates via SMS and email."
+      question: "How long does delivery take ?",
+      answer: "In Accra, Kumasi, and Takoradi, delivery takes 1–3 business days. Other areas usually take 3–7 days. Same-day delivery is available in select locations, with real-time tracking via SMS and email."
     },
     {
-      question: "Is delivery free?",
-      answer: "Yes! We offer free delivery on all orders above ₵100. For orders below ₵100, a small delivery fee of ₵5-₵15 applies depending on your location. We also offer express delivery options for an additional fee if you need your order urgently."
+      question: "Is delivery free ?",
+      answer: "Yes! Orders above ₵100 get free delivery. For smaller orders, delivery costs ₵5–₵15 based on your location. Need it fast? Choose express delivery for an extra fee. Disclaimer : Ideally, delivery should not be free. Delivery cost should reflect before checkout. Free delivery should only be applicable during PROMO’s on certain products only."
     },
     {
-      question: "What if I'm not satisfied with my purchase?",
-      answer: "We offer a 7-day return policy for most items. If you're not completely satisfied, you can return the item in its original condition for a full refund or exchange. Some items like electronics and personal care products may have different return policies. Contact our customer support team for assistance with returns."
+      question: "What if I am not satisfied with my purchase ?",
+      answer: "You can return most items within 7 days for a full refund or exchange, as long as they’re in original condition. Electronics and personal care items may have special rules — just contact our support team for help."
     },
     {
-      question: "How do I track my order?",
-      answer: "Once your order is confirmed, you'll receive a tracking number via SMS and email. You can track your order in real-time through our website or mobile app. Our delivery partners will also send you updates about your package status, including delivery attempts and final delivery confirmation."
+      question: "How do I track my order ?",
+      answer: "Once confirmed, you’ll get a tracking number via SMS and email. Track it in real-time on our website or app, and get updates from our delivery partners until it’s in your hands."
     },
     {
-      question: "Are the products authentic and genuine?",
+      question: "Are the products authentic and genuine ?",
       answer: "Absolutely! All sellers on IskaShop are verified and vetted. We have strict quality control measures in place to ensure all products are authentic and meet our quality standards. If you ever receive a counterfeit product, we'll provide a full refund and take action against the seller."
     },
     {
-      question: "Can I sell my products on IskaShop?",
-      answer: "Yes! We welcome local businesses and entrepreneurs to join our platform. To become a seller, you'll need to register as a business, provide necessary documentation, and complete our verification process. We offer competitive commission rates and provide marketing support to help you grow your business."
+      question: "Can I sell my products on ISKA shop ?",
+      answer: "Local businesses and entrepreneurs can join our platform by registering, submitting required documents, and completing verification. We offer competitive commission rates and marketing support to help your business grow."
     },
     {
-      question: "How can I contact customer support?",
-      answer: "Our customer support team is available 24/7. You can reach us through live chat on our website, call us at 020-XXX-XXXX, email us at support@iskashop.com, or use our contact form. We typically respond within 2 hours and are committed to resolving any issues quickly and efficiently."
+      question: "How can I contact customer support ?",
+      answer: "Our support team is available 24/7 via live chat, phone (020-XXX-XXXX), email (support@iskashop.com), or our contact form, with typical responses within 2 hours or less."
     }
   ]
 
@@ -53,7 +53,7 @@ const ShopFaq = () => {
   }
 
   return (
-    <div className="py-16 px-4 bg-gray-50">
+    <div className="py-16 px-4" style={{ backgroundColor: '#ffffff' }}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

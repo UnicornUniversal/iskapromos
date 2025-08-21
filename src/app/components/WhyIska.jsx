@@ -43,9 +43,9 @@ const WhyIska = () => {
       color: "bg-purple-50 text-purple-600"
     },
     {
-      icon: <MdLocalShipping className="text-3xl" />,
-      title: "Free Delivery",
-      description: "Free shipping on orders above ₵100 with nationwide delivery network coverage.",
+      icon: <MdLocalShipping className="text-3xl" />,  // Free Delivery
+      title: "Fast Delivery",
+      description: "Reliable delivery options with real-time tracking for your convenience.",
       color: "bg-red-50 text-red-600"
     },
     {

@@ -57,7 +57,7 @@ const IskaShopComingSoon = () => {
   }
 
   return (
-    <div className="   flex items-center justify-center px-4 py-8">
+    <div className="   flex items-center justify-center px-4 py-8 mt-[4em] md:mt-0">
       <div className=" mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           

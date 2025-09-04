@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MdEmail, MdNotifications } from 'react-icons/md'
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const IskaShopComingSoon = () => {
   const [email, setEmail] = useState('')
@@ -26,18 +28,22 @@ const IskaShopComingSoon = () => {
   }, [images.length])
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (!email) return
+    e.preventDefault();
+    if (!email) return;
 
-    setIsSubmitting(true)
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      setEmail('')
-    }, 1500)
-  }
+    setIsSubmitting(true);
+    try {
+      const response = await axios.post('/api/email', { email });
+      toast.success('Email submitted successfully');
+      setIsSubmitted(true);
+      setEmail('');
+    } catch (error) {
+      console.error('Error submitting email:', error);
+      toast.error('Error submitting email');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const imageVariants = {
     enter: (direction) => ({
@@ -102,12 +108,13 @@ const IskaShopComingSoon = () => {
                         placeholder="Enter your email address"
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={isSubmitting || !email}
-                      className="bg-primary hover:bg-primary/90 disabled:bg-gray-300 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 whitespace-nowrap"
+                      className={`bg-primary hover:bg-primary/90 disabled:bg-gray-300 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 whitespace-nowrap ${isSubmitting ? 'animate-pulse' : ''}`}
                     >
                       {isSubmitting ? (
                         <>

@@ -154,7 +154,7 @@ const WhyIska = () => {
     <div className="py-16 px-4">
       <div className="mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-4">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Why Choose <span className="text-primary">Iska</span>?
           </h2>
@@ -164,7 +164,7 @@ const WhyIska = () => {
         </div>
 
         {/* Slider Container */}
-        <div ref={containerRef} className="relative h-[500px] md:h-[400px] mb-12 overflow-hidden">
+        <div ref={containerRef} className="relative  rounded-lg h-[300px] md:h-[400px] mb-12 overflow-hidden">
           <AnimatePresence initial={false} custom={currentSlide}>
             <motion.div
               key={currentSlide}

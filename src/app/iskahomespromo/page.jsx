@@ -1,19 +1,38 @@
 'use client'
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const IskaHomesComingSoon = () => {
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+
+
+
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Email submitted:', email);
+    setLoading(true);
+    try {
+      const response = await axios.post('/api/home', { email });
+      toast.success('Email submitted successfully');
+      setEmail('');
+    } catch (error) {
+      console.error('Error submitting email:', error);
+      toast.error('Error submitting email');
+    } finally {
+      setLoading(false);
+    }
   };
+
+  // console.log(process.env.NEXT_PUBLIC_SHEET_URL);
 
   return (
     <div
@@ -62,16 +81,21 @@ const IskaHomesComingSoon = () => {
               placeholder="Enter your email"
               className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none text-sm md:text-md"
               required
+              disabled={loading}
             />
             <button
               type="submit"
-              className="flex-shrink-0 bg-primary h-full hover:bg-primary-dark border-primary hover:border-primary-dark text-sm md:text-md p-2 border-4 text-white rounded-full"
+              className={`flex-shrink-0 bg-primary h-full hover:bg-primary-dark border-primary hover:border-primary-dark text-sm md:text-md p-2 border-4 text-white rounded-full ${loading ? 'animate-pulse' : ''}`}
+              disabled={loading}
             >
-              Get Updates
+              {loading ? 'Submitting...' : 'Get Updates'}
             </button>
           </div>
+      
         </motion.form>
       </motion.div>
+
+  
     </div>
   );
 };

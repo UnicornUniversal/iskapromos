@@ -3,6 +3,8 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 
 import Nav from "./components/Nav";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const poppins = Poppins({
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
       >
         <Nav />
         {children}
+        <ToastContainer />
       </body>
     </html>
   );

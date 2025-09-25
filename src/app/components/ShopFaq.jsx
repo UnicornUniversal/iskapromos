@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { MdExpandMore, MdExpandLess } from 'react-icons/md'
 
 const ShopFaq = () => {
@@ -22,10 +23,10 @@ const ShopFaq = () => {
       question: "How long does delivery take ?",
       answer: "In Accra, Kumasi, and Takoradi, delivery takes 1–3 business days. Other areas usually take 3–7 days. Same-day delivery is available in select locations, with real-time tracking via SMS and email."
     },
-    {
-      question: "Is delivery free ?",
-      answer: "Yes! Orders above ₵100 get free delivery. For smaller orders, delivery costs ₵5–₵15 based on your location. Need it fast? Choose express delivery for an extra fee. Disclaimer : Ideally, delivery should not be free. Delivery cost should reflect before checkout. Free delivery should only be applicable during PROMO’s on certain products only."
-    },
+    // {
+    //   question: "Is delivery free ?",
+    //   answer: "Yes! Orders above ₵100 get free delivery. For smaller orders, delivery costs ₵5–₵15 based on your location. Need it fast? Choose express delivery for an extra fee. Disclaimer : Ideally, delivery should not be free. Delivery cost should reflect before checkout. Free delivery should only be applicable during PROMO’s on certain products only."
+    // },
     {
       question: "What if I am not satisfied with my purchase ?",
       answer: "You can return most items within 7 days for a full refund or exchange, as long as they’re in original condition. Electronics and personal care items may have special rules — just contact our support team for help."
@@ -114,9 +115,11 @@ const ShopFaq = () => {
               Our customer support team is here to help you 24/7
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+         <Link href={`mailto:info@iskaglobal.com`}>
               <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold">
                 Contact Support
               </button>
+              </Link>
               <button className="border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-all duration-200 font-semibold">
                 Live Chat
               </button>
